@@ -232,9 +232,10 @@ html, body {
   position: relative;
 }
 #main2 .forElem {
+  height: 100vh;
   width: 100%;
   font-family: regular;
-  font-size: 60px;
+  font-size: 15px;
   padding: 40px;
   display: none;
   position: absolute;
@@ -244,7 +245,7 @@ html, body {
 #main2 .forElem .back {
   position: absolute;
   right: 8%;
-  top: 30%;
+  top: 5%;
   border-radius: 10px;
   font-size: 30px;
   padding: 5px 5px;
@@ -253,4 +254,103 @@ html, body {
 }
 #main2 .forElem .back:active {
   scale: 0.97;
+}
+#main2 .forElem .task-container {
+  width: 100%;
+  height: 90%;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--tri1);
+  display: flex;
+  justify-content: space-between;
+}
+#main2 .forElem .task-container .addTask {
+  height: 100%;
+  width: 32%;
+  background-color: var(--pri);
+  border-radius: 15px;
+}
+#main2 .forElem .task-container .addTask form {
+  gap: 15px;
+  padding: 30px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+#main2 .forElem .task-container .addTask form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+  font-family: regular;
+  background-color: var(--tri1);
+  outline: none;
+}
+#main2 .forElem .task-container .addTask form textarea {
+  width: 100%;
+  height: 45vh;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+  font-family: regular;
+  background-color: var(--tri1);
+  outline: none;
+}
+#main2 .forElem .task-container .addTask form button {
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--tri2);
+  font-family: bold;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+#main2 .forElem .task-container .addTask form button:active {
+  scale: 0.97;
+}
+#main2 .forElem .task-container .allTask {
+  height: 100%;
+  width: 65%;
+  background-color: rgb(85, 121, 226);
+  border-radius: 15px;
+}
+#main2 .forElem .goals-container {
+  width: 100%;
+  height: 90%;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--tri1);
+  background-color: rgb(179, 17, 220);
+}
+#main2 .forElem .motivation-container {
+  width: 100%;
+  height: 90%;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--tri1);
+  background-color: rgb(26, 235, 138);
+}
+#main2 .forElem .daily-container {
+  width: 100%;
+  height: 90%;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--tri1);
+  background-color: rgb(69, 33, 116);
+}
+#main2 .forElem .pomo-container {
+  width: 100%;
+  height: 90%;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--tri1);
+  background-color: rgb(216, 43, 24);
 }/*# sourceMappingURL=style.css.map */
