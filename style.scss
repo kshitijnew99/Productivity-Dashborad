@@ -1,0 +1,291 @@
+:root{
+    --pri:rgba(17, 237, 226, 0.827);
+    --sec:#90D1CA;
+    --tri1:#129990;
+    --tri2:#096B68;
+}
+
+
+@font-face {
+    font-family: light;
+    src: url(./AeonikTRIAL-Light.otf);
+}
+
+@font-face {
+    font-family: regular;
+    src: url(./AeonikTRIAL-Regular.otf);
+}
+@font-face {
+    font-family: bold;
+    src: url(./AeonikTRIAL-Bold.otf);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}html,body{
+    height: 100%;
+    width: 100%;
+    // background-color: var(--pri);
+    background: linear-gradient(90deg, #096B68 0%, rgba(17, 237, 226, 0.827) 100%);
+
+    font-family: light;
+}
+
+#main1{
+    height: 100%;
+    width: 100%; 
+    display: flex;
+        .nav{
+        border-radius: 10px;
+        height: 100%;
+        width: 15%;  
+        border : 1px solid var(--tri1);
+        // background-color: var(--sec);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        
+
+        h1{
+            padding-top: 20px;
+            padding-left: 60px;
+        }
+        
+        .ele{
+            border : 1px solid var(--tri1);
+            border-radius: 10px;
+            margin-left: 10%;
+            padding: 10px 30px;
+            width: 80%;
+            height: 7%;
+            // background-color: var(--tri1);
+            display: flex;
+            text-align: center;
+        }
+
+    }
+
+    .element{
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        #dash{
+            margin: 5px 15px;
+            padding: 0px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 15%;
+            // background-color: red;
+            border-radius: 10px;
+            border : 1px solid var(--tri1);
+
+            #child1{
+                
+                padding: 0px 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                // background-color: green;
+
+                h1{
+                    font-size: 40px;
+                }
+            }
+            #child2{
+                i{
+                    font-size: 20px;
+                }
+                padding: 0px 15px;
+                gap : 35px;
+                // background-color: green;
+                display: flex;
+                align-items: center;
+                .profile{
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        #body
+        {
+            
+            border : 1px solid var(--tri1);
+            border-radius: 10px;
+            flex: 1;
+            margin: 5px 15px;
+            padding: 0px 20px;
+            // background-color: yellow;
+            padding: 10px 10px;
+            gap: 10px;
+            
+            > * {
+                border-radius: 20px;
+                border : 3px solid var(--tri1); 
+                
+            }
+            display: grid;
+            grid-template-areas: 
+            "a a b"
+            "c d e";
+        }
+        .elem{
+            transition: all 0.5s ease;
+                
+        }
+        .elem:active{
+            scale: 0.97;
+        }   
+        .part1.elem
+        {
+            grid-area: a;
+            padding: 15px 15px;
+            
+            position: relative;
+            h1 {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            z-index: 1;
+            }
+            img 
+            {   
+                position: absolute;
+                top: 0; 
+                left: 0;
+                width: 100%;          
+                height: 100%;        
+                object-fit:fill;   
+                border-radius: inherit;
+                opacity: 1;
+                
+            }
+        }
+        .part2.elem
+        {
+            grid-area: b; 
+            padding: 15px 15px; 
+            position: relative;
+            overflow: hidden;
+            h1 {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            z-index: 1;
+            }
+            img 
+            {   
+                position: absolute;
+                top: 0; 
+                left: 0;
+                width: 100%;          
+                height: 100%;        
+                object-fit: cover;   
+                border-radius: inherit;
+                
+            }   
+        }
+        .part3.elem
+        {
+            grid-area: c;
+            padding: 15px 15px;       
+            position: relative;
+            h1 {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            z-index: 1;
+            }
+            img 
+            {   
+                position: absolute;
+                top: 0; 
+                left: 0;
+                width: 100%;          
+                height: 100%;        
+                object-fit: cover;   
+                border-radius: inherit;
+                
+            }          
+        }
+        .part4.elem
+        {
+            grid-area: d; 
+            padding: 15px 15px;      
+            position: relative;
+            h1 {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            z-index: 1;
+            }
+            img 
+            {   
+                position: absolute;
+                top: 0; 
+                left: 0;
+                width: 100%;          
+                height: 100%;        
+                object-fit: cover;   
+                border-radius: inherit;
+                
+            }             
+        }
+        .part5.elem
+        {
+            grid-area: e; 
+            padding: 15px 15px;
+            position: relative;
+            h1 {
+                position: absolute;
+                bottom: 10px;
+                right: 15px;
+                z-index: 1;
+            }
+            img 
+            {   
+                position: absolute;
+                top: 0; 
+                left: 0;
+                width: 100%;          
+                height: 100%;        
+                object-fit:fill;   
+                border-radius: inherit;
+                
+            }
+        }
+    }
+        
+    }
+
+#main2{
+    background-color: yellow;
+    width: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 100vh;
+    // padding: 40px 0;
+    position: relative;
+
+    .forElem{
+        height: 100%;
+        width: 100%;
+        font-family: regular;
+        font-size: 60px;
+        padding: 40px;
+        display: none;
+        position: absolute;
+        top: 0; left: 0;
+
+    }
+}
+
+
+
+

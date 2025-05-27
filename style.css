@@ -1,0 +1,245 @@
+:root {
+  --pri:rgba(17, 237, 226, 0.827);
+  --sec:#90D1CA;
+  --tri1:#129990;
+  --tri2:#096B68;
+}
+
+@font-face {
+  font-family: light;
+  src: url(./AeonikTRIAL-Light.otf);
+}
+@font-face {
+  font-family: regular;
+  src: url(./AeonikTRIAL-Regular.otf);
+}
+@font-face {
+  font-family: bold;
+  src: url(./AeonikTRIAL-Bold.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #096B68 0%, rgba(17, 237, 226, 0.827) 100%);
+  font-family: light;
+}
+
+#main1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+#main1 .nav {
+  border-radius: 10px;
+  height: 100%;
+  width: 15%;
+  border: 1px solid var(--tri1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#main1 .nav h1 {
+  padding-top: 20px;
+  padding-left: 60px;
+}
+#main1 .nav .ele {
+  border: 1px solid var(--tri1);
+  border-radius: 10px;
+  margin-left: 10%;
+  padding: 10px 30px;
+  width: 80%;
+  height: 7%;
+  display: flex;
+  text-align: center;
+}
+#main1 .element {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+}
+#main1 .element #dash {
+  margin: 5px 15px;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 15%;
+  border-radius: 10px;
+  border: 1px solid var(--tri1);
+}
+#main1 .element #dash #child1 {
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#main1 .element #dash #child1 h1 {
+  font-size: 40px;
+}
+#main1 .element #dash #child2 {
+  padding: 0px 15px;
+  gap: 35px;
+  display: flex;
+  align-items: center;
+}
+#main1 .element #dash #child2 i {
+  font-size: 20px;
+}
+#main1 .element #dash #child2 .profile {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#main1 .element #body {
+  border: 1px solid var(--tri1);
+  border-radius: 10px;
+  flex: 1;
+  margin: 5px 15px;
+  padding: 0px 20px;
+  padding: 10px 10px;
+  gap: 10px;
+  display: grid;
+  grid-template-areas: "a a b" "c d e";
+}
+#main1 .element #body > * {
+  border-radius: 20px;
+  border: 3px solid var(--tri1);
+}
+#main1 .element .elem {
+  transition: all 0.5s ease;
+}
+#main1 .element .elem:active {
+  scale: 0.97;
+}
+#main1 .element .part1.elem {
+  grid-area: a;
+  padding: 15px 15px;
+  position: relative;
+}
+#main1 .element .part1.elem h1 {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  z-index: 1;
+}
+#main1 .element .part1.elem img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: inherit;
+  opacity: 1;
+}
+#main1 .element .part2.elem {
+  grid-area: b;
+  padding: 15px 15px;
+  position: relative;
+  overflow: hidden;
+}
+#main1 .element .part2.elem h1 {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  z-index: 1;
+}
+#main1 .element .part2.elem img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+#main1 .element .part3.elem {
+  grid-area: c;
+  padding: 15px 15px;
+  position: relative;
+}
+#main1 .element .part3.elem h1 {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  z-index: 1;
+}
+#main1 .element .part3.elem img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+#main1 .element .part4.elem {
+  grid-area: d;
+  padding: 15px 15px;
+  position: relative;
+}
+#main1 .element .part4.elem h1 {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  z-index: 1;
+}
+#main1 .element .part4.elem img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+#main1 .element .part5.elem {
+  grid-area: e;
+  padding: 15px 15px;
+  position: relative;
+}
+#main1 .element .part5.elem h1 {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  z-index: 1;
+}
+#main1 .element .part5.elem img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: inherit;
+}
+
+#main2 {
+  background-color: yellow;
+  width: 100%;
+  position: relative;
+}
+#main2 .forElem {
+  height: 100%;
+  width: 100%;
+  font-family: regular;
+  font-size: 60px;
+  padding: 40px;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}/*# sourceMappingURL=style.css.map */
