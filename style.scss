@@ -265,7 +265,7 @@
     }
 
 #main2{
-    background-color: yellow;
+    // background-color: yellow;
     width: 100%;
     // display: flex;
     // flex-direction: column;
@@ -274,7 +274,7 @@
     position: relative;
 
     .forElem{
-        height: 100%;
+        // height: 100%;
         width: 100%;
         font-family: regular;
         font-size: 60px;
@@ -282,8 +282,26 @@
         display: none;
         position: absolute;
         top: 0; left: 0;
+        
+
+        .back{
+            
+            position: absolute;
+            right: 8%;
+            top: 30%;
+            border-radius: 10px;
+            font-size: 30px;
+            padding: 5px 5px;
+            background-color: transparent;
+            border: solid 2px var(--tri1);
+        }
+
+        .back:active{
+            scale: 0.97;
+        }
 
     }
+
 }
 
 

@@ -228,12 +228,10 @@ html, body {
 }
 
 #main2 {
-  background-color: yellow;
   width: 100%;
   position: relative;
 }
 #main2 .forElem {
-  height: 100%;
   width: 100%;
   font-family: regular;
   font-size: 60px;
@@ -242,4 +240,17 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
+}
+#main2 .forElem .back {
+  position: absolute;
+  right: 8%;
+  top: 30%;
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 5px 5px;
+  background-color: transparent;
+  border: solid 2px var(--tri1);
+}
+#main2 .forElem .back:active {
+  scale: 0.97;
 }/*# sourceMappingURL=style.css.map */
