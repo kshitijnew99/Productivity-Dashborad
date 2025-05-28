@@ -1,26 +1,20 @@
-// Global variables
-const currentTasks = [
-  {
-    task: "Complete homework",
-    details: "Finish math and science assignments by evening",
-  },
-  {
-    task: "Grocery shopping",
-    details: "Buy milk, eggs, and vegetables from the supermarket",
-  },
-  {
-    task: "Workout",
-    details: "Go for a 30-minute run and do strength training",
-  },
-];
+localStorage.clear()
+let currentTask = [];
 
-// Function to render tasks
+if(localStorage.getItem('currentTask')){
+    currentTask = JSON.parse(localStorage.getItem('currentTask'))
+    
+}else{
+    console.log('Local Storage is empty');
+}
+
+
 function renderTask() {
-  const allTask = document.querySelector(".task-container .allTask");
-  if (!allTask) return; // Exit if element doesn't exist
+  let allTask = document.querySelector(".task-container .allTask");
+  if (!allTask) return; 
 
   let sum = "";
-  currentTasks.forEach(function (elem) {
+  currentTask.forEach(function (elem) {
     sum += `<div class="task">
       <h3>${elem.task}</h3>
       <button>Completed</button>
@@ -72,10 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (taskInput.value.trim()) {  // Only add if there's a task name
-        currentTasks.push({ 
+        currentTask.push({ 
           task: taskInput.value, 
           details: tasktextarea.value 
         });
+        localStorage.setItem('currentTask',JSON.stringify(currentTask))
         renderTask();
         // Clear the form
         taskInput.value = '';
@@ -84,3 +79,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+
