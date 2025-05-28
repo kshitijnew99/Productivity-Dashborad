@@ -244,12 +244,12 @@ html, body {
 }
 #main2 .forElem .back {
   position: absolute;
-  right: 8%;
+  right: 2.5%;
   top: 5%;
-  border-radius: 10px;
-  font-size: 30px;
-  padding: 5px 5px;
-  background-color: transparent;
+  border-radius: 19px;
+  font-size: 23px;
+  padding: 5px 10px;
+  background-color: var(--sec);
   border: solid 2px var(--tri1);
 }
 #main2 .forElem .back:active {
@@ -268,7 +268,7 @@ html, body {
 #main2 .forElem .task-container .addTask {
   height: 100%;
   width: 32%;
-  background-color: var(--pri);
+  background-color: var(--sec);
   border-radius: 15px;
 }
 #main2 .forElem .task-container .addTask form {
@@ -315,8 +315,37 @@ html, body {
 #main2 .forElem .task-container .allTask {
   height: 100%;
   width: 65%;
-  background-color: rgb(85, 121, 226);
+  background-color: var(--sec);
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  overflow: auto;
+}
+#main2 .forElem .task-container .allTask .task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--tri1);
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+#main2 .forElem .task-container .allTask .task h3 {
+  font-size: 22px;
+}
+#main2 .forElem .task-container .allTask .task button {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: var(--tri2);
+  border: none;
+}
+#main2 .forElem .task-container .allTask .task button:active {
+  scale: 0.97;
 }
 #main2 .forElem .goals-container {
   width: 100%;
