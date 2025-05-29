@@ -1,26 +1,37 @@
-localStorage.clear()
+// localStorage.clear()
 let currentTask = [];
 
 if(localStorage.getItem('currentTask')){
     currentTask = JSON.parse(localStorage.getItem('currentTask'))
     
 }else{
-    console.log('Local Storage is empty');
+    // console.log('Local Storage is empty');
 }
 
 
 function renderTask() {
-  let allTask = document.querySelector(".task-container .allTask");
-  if (!allTask) return; 
+    let allTask = document.querySelector(".task-container .allTask");
+    if (!allTask) return; 
 
-  let sum = "";
-  currentTask.forEach(function (elem) {
-    sum += `<div class="task">
-      <h3>${elem.task}</h3>
-      <button>Completed</button>
-    </div>`;
-  });
-  allTask.innerHTML = sum;
+    let sum = "";
+    currentTask.forEach(function (elem,idx) {
+      sum += `<div class="task">
+        <h3>${elem.task}</h3>
+        <button id = "${idx}">Completed</button>
+      </div>`;
+    });
+    allTask.innerHTML = sum;
+
+    var taskbutton = document.querySelectorAll('.task button');
+    taskbutton.forEach(function(btn){
+        btn.addEventListener('click',function(){
+            currentTask.splice(btn.id,1);
+            localStorage.removeItem('currentTask[btn.id]')
+            renderTask();
+            
+            
+        })
+    })
 }
 
 // Function to handle card opening
@@ -51,6 +62,8 @@ function opencard() {
         .forEach((f) => (f.style.display = "none"));
     });
   });
+
+    
 }
 
 // Initialize the app
@@ -79,5 +92,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
+var taskbutton = document.querySelectorAll('#taskbutton')
+taskbutton.forEach(function(btn){
+    btn.addEventListener('click',function(){
+        console.log('clicked');
+    })
+})
 
