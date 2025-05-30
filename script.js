@@ -65,6 +65,7 @@ function opencard() {
 // Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
   opencard();
+  
 
   // Set up form handling
   const form = document.querySelector(".task-container .addTask form");
@@ -89,31 +90,43 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-var dailyplannerdata = {}
-var hours = Array.from({length:18},(_,idx)=>`${6+idx}:00 - ${7+idx}:00`)
-var wholeday = ''
-hours.forEach(function(elem,idx){
-    wholeday = wholeday + `<div class="daily-planner-time">
-        <p>${6+idx}:00 - ${7+idx}:00</p>
-        <input  id="${idx}" type="text" placeholder="">
-    </div>`
-})
-var dailyplanner = document.querySelector('.daily-planner')
-dailyplanner.innerHTML = wholeday
 
+function dailyplanner(){
+    var dailyplannerdata = {}
+    var dailyplannerdata = JSON.parse(localStorage.getItem('dailyplannerData'))||{}
+    var dailyplanner = document.querySelector('.daily-planner')
+    // let workinghour = prompt("Enter the number of working hours")
+    
+    var hours = Array.from({length:18},(_,idx)=>`${6+idx}:00 - ${7+idx}:00`)
+    var wholeday = ''
+    hours.forEach(function(elem,idx){
 
-var dailyplannerInput = document.querySelectorAll('.daily-planner input')
-
-dailyplannerInput.forEach(function(elem){
-    elem.addEventListener('input',function(){
-        dailyplannerdata[elem.id] = elem.value
-        
-        localStorage.setItem('dailyplannerData', JSON.stringify(dailyplannerdata))
+        var savedData = dailyplannerdata[idx] || ""
+        console.log(savedData);
         
         
+        wholeday = wholeday + `<div class="daily-planner-time">
+            <p>${6+idx}:00 - ${7+idx}:00</p>
+            <input  id="${idx}" type="text" placeholder="" value ="${savedData}">
+        </div>`
     })
-})
+    // console.log(dailyplannerdata);
 
+    dailyplanner.innerHTML = wholeday   
+
+    var dailyplannerInput = document.querySelectorAll('.daily-planner input')
+    dailyplannerInput.forEach(function(elem){
+        elem.addEventListener('input',function(){
+            dailyplannerdata[elem.id] = elem.value
+            
+            localStorage.setItem('dailyplannerData', JSON.stringify(dailyplannerdata))
+
+        })
+    })
+
+}
+
+dailyplanner()
 
 
 
