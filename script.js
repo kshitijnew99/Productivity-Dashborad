@@ -89,12 +89,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+var dailyplannerdata = {}
 var hours = Array.from({length:18},(_,idx)=>`${6+idx}:00 - ${7+idx}:00`)
 var wholeday = ''
 hours.forEach(function(elem,idx){
     wholeday = wholeday + `<div class="daily-planner-time">
         <p>${6+idx}:00 - ${7+idx}:00</p>
-        <input type="text" placeholder="">
+        <input  id="${idx}" type="text" placeholder="">
     </div>`
 })
 var dailyplanner = document.querySelector('.daily-planner')
@@ -105,7 +106,10 @@ var dailyplannerInput = document.querySelectorAll('.daily-planner input')
 
 dailyplannerInput.forEach(function(elem){
     elem.addEventListener('input',function(){
-        console.log(elem.value);
+        dailyplannerdata[elem.id] = elem.value
+        
+        localStorage.setItem('dailyplannerData', JSON.stringify(dailyplannerdata))
+        
         
     })
 })

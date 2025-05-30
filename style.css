@@ -408,6 +408,9 @@ html, body {
   border-radius: 10px;
   background-color: var(--tri2);
 }
+#main2 .forElem .daily-planner .daily-planner-time input:focus {
+  background-color: white;
+}
 #main2 .forElem .pomo-container {
   width: 100%;
   height: 90%;

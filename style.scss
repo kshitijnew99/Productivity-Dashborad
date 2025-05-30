@@ -457,10 +457,10 @@
                     border-radius: 10px;
                     background-color: var(--tri2);
                 }
+                input:focus{
+                    background-color: white;
+                }
             }
-
-
-
         }
         .pomo-container{
             width: 100%;
