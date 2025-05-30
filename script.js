@@ -8,7 +8,6 @@ if(localStorage.getItem('currentTask')){
     // console.log('Local Storage is empty');
 }
 
-
 function renderTask() {
     let allTask = document.querySelector(".task-container .allTask");
     if (!allTask) return; 
@@ -28,8 +27,6 @@ function renderTask() {
             currentTask.splice(btn.id,1);
             localStorage.removeItem('currentTask[btn.id]')
             renderTask();
-            
-            
         })
     })
 }
@@ -63,7 +60,6 @@ function opencard() {
     });
   });
 
-    
 }
 
 // Initialize the app
@@ -92,10 +88,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-var taskbutton = document.querySelectorAll('#taskbutton')
-taskbutton.forEach(function(btn){
-    btn.addEventListener('click',function(){
-        console.log('clicked');
+
+var hours = Array.from({length:18},(_,idx)=>`${6+idx}:00 - ${7+idx}:00`)
+var wholeday = ''
+hours.forEach(function(elem,idx){
+    wholeday = wholeday + `<div class="daily-planner-time">
+        <p>${6+idx}:00 - ${7+idx}:00</p>
+        <input type="text" placeholder="">
+    </div>`
+})
+var dailyplanner = document.querySelector('.daily-planner')
+dailyplanner.innerHTML = wholeday
+
+
+var dailyplannerInput = document.querySelectorAll('.daily-planner input')
+
+dailyplannerInput.forEach(function(elem){
+    elem.addEventListener('input',function(){
+        console.log(elem.value);
+        
     })
 })
+
+
+
 

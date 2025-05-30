@@ -428,29 +428,34 @@
             gap: 20px;
 
             .daily-planner-time{
-                height: 10vh;
+                height: 12vh;
                 background-color: var(--tri2);
                 border-radius: 5px;
                 display: flex;
                 align-items: center;
                 justify-content:flex-end;
                 position: relative;
-                padding:  10px 0px;
+                // padding:  1px 0px;
+                padding-top: 25px;
                 padding-right: 10px;
+                padding-left: 10px;
+                padding-bottom: 10px;
                 width: 49%;
                 margin-bottom: 10px;
                 p{
                     font-size: 18px;
                     position: absolute;
-                    top: 10%;
+                    top: 2%;
                     left: 1%;
                 }
                 input{
-                    width:  92%;
-                    padding: 15px 20px;
+                    height: 90%;
+                    width:  100%;
+                    padding: 1px 10px;
                     font-size: 25px;
                     border: none;
                     border-radius: 10px;
+                    background-color: var(--tri2);
                 }
             }
 
