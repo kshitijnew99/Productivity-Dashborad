@@ -131,5 +131,32 @@ async function motivational(){
 }
 motivational()
 
+function Timer(){
+    var totalSecond = 1500
+    let timer = document.querySelector('.pomo-timer h1')
+    let start = document.querySelector('.start-timer')
+    let pause = document.querySelector('.pause-timer')
+    let reset = document.querySelector('.reset-timer')
+
+    function undateTimer(){
+        let minutes = Math.floor(totalSecond/60)
+        let seconds = totalSecond%60
+        timer.innerHTML = `${minutes}:${seconds}`
+    }
+
+    start.addEventListener('click',function(){
+        setInterval(() => {
+        totalSecond--;
+        undateTimer()
+        }, 1000);
+    })
+
+    
+    
+    
+}
+
+Timer()
+
 
 
