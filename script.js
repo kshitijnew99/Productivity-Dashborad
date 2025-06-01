@@ -109,7 +109,7 @@ function dailyplanner(){
 }
 dailyplanner()
 
-async function fetchdata(){
+async function motivational(){
 
     var motivationWrapper = document.querySelector('.motivation-wrapper')
 
@@ -129,7 +129,7 @@ async function fetchdata(){
                                 </div>`
     motivationWrapper.innerHTML = motivation;
 }
-fetchdata()
+motivational()
 
 
 
