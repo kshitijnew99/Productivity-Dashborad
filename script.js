@@ -146,7 +146,6 @@ function Timer(){
     start.addEventListener('click',function(){
         clearInterval(timerInterval)
         if(workSession){
-            totalSecond = 25*60
             timerInterval = setInterval(() =>{
                 if(totalSecond > 0){
                     totalSecond--;
@@ -155,10 +154,11 @@ function Timer(){
                 else{
                     workSession = false
                     clearInterval(timerInterval)
+                    timer.innerHTML = '05:00'
+                    totalSecond = 5*60;
                 }
-            },1000) 
+            },10) 
         }else{
-            totalSecond = 5*60
             timerInterval = setInterval(() =>{
                 if(totalSecond > 0){
                     totalSecond--;
@@ -166,8 +166,10 @@ function Timer(){
                 }else{
                     workSession = true
                     clearInterval(timerInterval)
+                    timer.innerHTML = '25:00'
+                    totalSecond = 25*60
                 }
-            },1000) 
+            },10) 
         }
     })
 
