@@ -135,6 +135,7 @@ function Timer(){
     let start = document.querySelector('.start-timer')
     let pause = document.querySelector('.pause-timer')
     let reset = document.querySelector('.reset-timer')
+    let workStatus = document.querySelector('.workStatus')
     var workSession = true
 
     function updateTimer(){
@@ -155,6 +156,8 @@ function Timer(){
                     workSession = false
                     clearInterval(timerInterval)
                     timer.innerHTML = '05:00'
+                    workStatus.innerHTML = 'Break Time'
+                    workStatus.style.backgroundColor = 'var(--sec)'
                     totalSecond = 5*60;
                 }
             },10) 
@@ -167,6 +170,8 @@ function Timer(){
                     workSession = true
                     clearInterval(timerInterval)
                     timer.innerHTML = '25:00'
+                    workStatus.innerHTML = 'Work Session'
+                    workStatus.style.backgroundColor = 'var(--tri2)'
                     totalSecond = 25*60
                 }
             },10) 
