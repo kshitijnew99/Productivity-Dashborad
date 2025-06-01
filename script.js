@@ -135,8 +135,9 @@ function Timer(){
     let start = document.querySelector('.start-timer')
     let pause = document.querySelector('.pause-timer')
     let reset = document.querySelector('.reset-timer')
+    var workSession = true
 
-    function undateTimer(){
+    function updateTimer(){
         let minutes = Math.floor(totalSecond/60)
         let seconds = totalSecond%60
         timer.innerHTML = `${String(minutes).padStart('2','0')}:${String(seconds).padStart('2','0')}`
@@ -144,11 +145,31 @@ function Timer(){
 
     start.addEventListener('click',function(){
         clearInterval(timerInterval)
-        timerInterval = setInterval(() => {
-        totalSecond--;
-        undateTimer()
-        }, 1000);
-    }) 
+        if(workSession){
+            totalSecond = 25*60
+            timerInterval = setInterval(() =>{
+                if(totalSecond > 0){
+                    totalSecond--;
+                    updateTimer();
+                }
+                else{
+                    workSession = false
+                    clearInterval(timerInterval)
+                }
+            },1000) 
+        }else{
+            totalSecond = 5*60
+            timerInterval = setInterval(() =>{
+                if(totalSecond > 0){
+                    totalSecond--;
+                    updateTimer();
+                }else{
+                    workSession = true
+                    clearInterval(timerInterval)
+                }
+            },1000) 
+        }
+    })
 
     pause.addEventListener('click',function(){
         clearInterval(timerInterval)
@@ -156,7 +177,7 @@ function Timer(){
     reset.addEventListener('click',function(){
         totalSecond = 25*60
         clearInterval(timerInterval)
-        undateTimer()
+        updateTimer()
     })
 }
 Timer()
