@@ -1,13 +1,10 @@
 // localStorage.clear()
 let currentTask = [];
-
 if(localStorage.getItem('currentTask')){
-    currentTask = JSON.parse(localStorage.getItem('currentTask'))
-    
+    currentTask = JSON.parse(localStorage.getItem('currentTask'))   
 }else{
-    // console.log('Local Storage is empty');
+    
 }
-
 function renderTask() {
     let allTask = document.querySelector(".task-container .allTask");
     if (!allTask) return; 
@@ -133,6 +130,7 @@ motivational()
 
 function Timer(){
     var totalSecond = 1500
+    let timerInterval = null
     let timer = document.querySelector('.pomo-timer h1')
     let start = document.querySelector('.start-timer')
     let pause = document.querySelector('.pause-timer')
@@ -141,21 +139,26 @@ function Timer(){
     function undateTimer(){
         let minutes = Math.floor(totalSecond/60)
         let seconds = totalSecond%60
-        timer.innerHTML = `${minutes}:${seconds}`
+        timer.innerHTML = `${String(minutes).padStart('2','0')}:${String(seconds).padStart('2','0')}`
     }
 
     start.addEventListener('click',function(){
-        setInterval(() => {
+        clearInterval(timerInterval)
+        timerInterval = setInterval(() => {
         totalSecond--;
         undateTimer()
         }, 1000);
+    }) 
+
+    pause.addEventListener('click',function(){
+        clearInterval(timerInterval)
     })
-
-    
-    
-    
+    reset.addEventListener('click',function(){
+        totalSecond = 25*60
+        clearInterval(timerInterval)
+        undateTimer()
+    })
 }
-
 Timer()
 
 
