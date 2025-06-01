@@ -32,6 +32,7 @@
     background: linear-gradient(90deg, #096B68 0%, rgba(17, 237, 226, 0.827) 100%);
 
     font-family: light;
+    // overflow: hidden;
 }
 
 #main1{
@@ -277,6 +278,7 @@
         display: none;
         position: absolute;
         top: 0; left: 0;
+        position: relative;
         // background-color: yellow;
 
         .back{
@@ -405,15 +407,90 @@
             background-color: rgb(179, 17, 220);
         }
         .motivation-container{
-            width: 100%;
-            height: 90%;
-            margin-top: 40px;
-            padding: 20px;
-            border-radius: 10px;
+            width: 90%;
+            height: 40%;
+            border-radius: 30px;
             border: 2px solid var(--tri1);
-            background-color: rgb(26, 235, 138);
+            // background-color: yellow;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            overflow: hidden;
+
+            .motivation-wrapper{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                justify-content: space-evenly;
+                z-index: 10;
+                position: relative;
+                width:100%;
+                height: 100%;
+                background-color: var(--sec);
+                border-radius: 30px;
+                padding: 20px;
+                
+                
+                .motivation1{
+                    padding: 10px;
+                    border-radius: 30px;
+                    width: 100%;
+                    background-color: #98cef7;
+                    background: linear-gradient(90deg, #096B68 0%, rgba(17, 237, 226, 0.827) 100%);
+                    h2{
+                        font-size: 30px;
+                        text-align: center;
+                        font-weight: 500;
+                        color: var(--tri2);
+                    }
+                }
+                .motivation2{
+                    margin-top: 10px;
+                    padding: 10px;
+                    border-radius: 30px;
+                    width: 100%;
+                    background-color: var(--tri2);
+                    h1{
+                        font-size: 28px;
+                        opacity: 0.8;
+                        text-align: center;
+                        color: black;
+                        font-family: light;
+                    }
+                }
+                .motivation3{
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    margin-top: 10px;
+                    padding: 17px 10px;
+                    border-radius: 30px;
+                    
+                    width:fit-content;
+                      
+                    background: white; 
+                    h2{
+                        font-size: 20px;
+                        text-align: right;
+                        font-weight: 700;
+                        color: var(--tri2);
+                    }
+                }
+            }
         }
-        
+        .motivation-container::after{
+            content: '';
+            width:100%;
+            height: 100%;
+            scale: 1.6;
+            border-radius: 30px;
+            
+            // background-color: #3DA9FC;
+            position: absolute;
+            z-index: 8;
+            filter: blur(100px);
+        }
         .daily-planner{
             width: 100%;
             height: 90%;
@@ -447,6 +524,7 @@
                     position: absolute;
                     top: 2%;
                     left: 1%;
+                    color: var(--sec);
                 }
                 input{
                     height: 90%;

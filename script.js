@@ -30,7 +30,6 @@ function renderTask() {
         })
     })
 }
-
 // Function to handle card opening
 function opencard() {
   let allElem = document.querySelectorAll(".elem");
@@ -49,7 +48,6 @@ function opencard() {
       }
     });
   });
-
   back.forEach(function (btn) {
     btn.addEventListener("click", function () {
       document.querySelector("#main1").style.display = "flex";
@@ -59,14 +57,9 @@ function opencard() {
         .forEach((f) => (f.style.display = "none"));
     });
   });
-
 }
-
-// Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
   opencard();
-  
-
   // Set up form handling
   const form = document.querySelector(".task-container .addTask form");
   const taskInput = document.querySelector(".task-container .addTask form #task-input");
@@ -75,14 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (taskInput.value.trim()) {  // Only add if there's a task name
+      if (taskInput.value.trim()) {  
         currentTask.push({ 
           task: taskInput.value, 
           details: tasktextarea.value 
         });
         localStorage.setItem('currentTask',JSON.stringify(currentTask))
         renderTask();
-        // Clear the form
+        
         taskInput.value = '';
         tasktextarea.value = '';
       }
@@ -94,39 +87,49 @@ document.addEventListener('DOMContentLoaded', function() {
 function dailyplanner(){
     var dailyplannerdata = {}
     var dailyplannerdata = JSON.parse(localStorage.getItem('dailyplannerData'))||{}
-    var dailyplanner = document.querySelector('.daily-planner')
-    // let workinghour = prompt("Enter the number of working hours")
-    
+    var dailyplanner = document.querySelector('.daily-planner') 
     var hours = Array.from({length:18},(_,idx)=>`${6+idx}:00 - ${7+idx}:00`)
     var wholeday = ''
     hours.forEach(function(elem,idx){
-
         var savedData = dailyplannerdata[idx] || ""
-        console.log(savedData);
-        
-        
+        // console.log(savedData);
         wholeday = wholeday + `<div class="daily-planner-time">
             <p>${6+idx}:00 - ${7+idx}:00</p>
             <input  id="${idx}" type="text" placeholder="" value ="${savedData}">
         </div>`
     })
-    // console.log(dailyplannerdata);
-
     dailyplanner.innerHTML = wholeday   
-
     var dailyplannerInput = document.querySelectorAll('.daily-planner input')
     dailyplannerInput.forEach(function(elem){
         elem.addEventListener('input',function(){
-            dailyplannerdata[elem.id] = elem.value
-            
+            dailyplannerdata[elem.id] = elem.value          
             localStorage.setItem('dailyplannerData', JSON.stringify(dailyplannerdata))
-
         })
     })
-
 }
-
 dailyplanner()
+
+async function fetchdata(){
+
+    var motivationWrapper = document.querySelector('.motivation-wrapper')
+
+    let response = await fetch('https://quotes-api-self.vercel.app/quote') 
+    let data = await response.json()
+
+    let motivation = ''
+
+    motivation = motivation + `<div class="motivation1">
+                                    <h2>Quote of the Day</h2>
+                                </div>
+                                <div class="motivation2">
+                                    <h1>${data.quote}</h1>
+                                </div>
+                                <div class="motivation3">
+                                    <h2>${data.author}</h2>
+                                </div>`
+    motivationWrapper.innerHTML = motivation;
+}
+fetchdata()
 
 
 
