@@ -160,7 +160,7 @@ function Timer(){
                     workStatus.style.backgroundColor = 'var(--sec)'
                     totalSecond = 5*60;
                 }
-            },10) 
+            },1000) 
         }else{
             timerInterval = setInterval(() =>{
                 if(totalSecond > 0){
@@ -174,7 +174,7 @@ function Timer(){
                     workStatus.style.backgroundColor = 'var(--tri2)'
                     totalSecond = 25*60
                 }
-            },10) 
+            },1000) 
         }
     })
 

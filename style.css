@@ -28,6 +28,7 @@ html, body {
   width: 100%;
   background: linear-gradient(90deg, #096B68 0%, rgba(17, 237, 226, 0.827) 100%);
   font-family: light;
+  overflow: hidden;
 }
 
 #main1 {
@@ -36,8 +37,9 @@ html, body {
   display: flex;
 }
 #main1 .nav {
+  margin: 5px;
   border-radius: 10px;
-  height: 100%;
+  height: 98%;
   width: 15%;
   border: 1px solid var(--tri1);
   display: flex;
@@ -107,7 +109,7 @@ html, body {
   padding: 10px 10px;
   gap: 10px;
   display: grid;
-  grid-template-areas: "a a b" "c d e";
+  grid-template-areas: "f f f f f" "a b c d e";
 }
 #main1 .element #body > * {
   border-radius: 20px;
@@ -225,6 +227,42 @@ html, body {
   -o-object-fit: fill;
      object-fit: fill;
   border-radius: inherit;
+}
+#main1 .element .part6.elem {
+  grid-area: f;
+}
+#main1 .element .part6.elem .header {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  background-image: url("https://images.unsplash.com/photo-1717361279773-b2e7ee713d2e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-size: cover;
+  border-radius: inherit;
+}
+#main1 .element .part6.elem .header1 h1 {
+  font-size: 80px;
+  font-weight: 500;
+}
+#main1 .element .part6.elem .header1 h4 {
+  font-size: 60px;
+  font-weight: 500;
+}
+#main1 .element .part6.elem .header2 h2 {
+  font-size: 35px;
+  font-weight: 800;
+  font-family: regular;
+}
+#main1 .element .part6.elem .header2 h4 {
+  font-size: 25px;
+  font-weight: 700;
+}
+#main1 .element .part6.elem .header2 h3 {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 #main2 {
