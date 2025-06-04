@@ -259,15 +259,28 @@ html, body {
   font-weight: 700;
 }
 #main1 .element .part6.elem .header2 h2 {
-  font-size: 35px;
+  font-size: 45px;
   font-weight: 800;
   font-family: regular;
 }
 #main1 .element .part6.elem .header2 h4 {
-  font-size: 25px;
+  font-size: 15px;
   font-weight: 700;
+  margin-bottom: 20px;
 }
 #main1 .element .part6.elem .header2 h3 {
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.8;
+  font-family: light;
+}
+#main1 .element .part6.elem .header2 h5 {
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.8;
+  font-family: light;
+}
+#main1 .element .part6.elem .header2 h6 {
   font-size: 20px;
   font-weight: 700;
   opacity: 0.8;
