@@ -241,18 +241,18 @@ function dateTime() {
   let year = date.getFullYear();
 
   if (hours > 12) {
-    header1H1.innerHTML = `${day}, ${hours - 12}:${String(minutes).padStart(
+    header1H1.innerHTML = `${day}, ${String(hours - 12).padStart("2", "0")}:${String(minutes).padStart(
       "2",
       "0"
     )}:${String(seconds).padStart("2", "0")} PM `;
   } else {
-    header1H1.innerHTML = `${day}, ${hours}:${String(minutes).padStart(
+    header1H1.innerHTML = `${day}, ${String(hours).padStart("2", "0")}:${String(minutes).padStart(
       "2",
       "0"
     )} AM `;
   }
 
-  header1H2.innerHTML = `${tarik} ${month} , ${year}`;
+  header1H2.innerHTML = `${String(tarik).padStart("2", "0")} ${month} , ${year}`;
 }
 
 setInterval(() => {
@@ -277,20 +277,17 @@ async function weatherForCast() {
   header1H4.innerHTML = `${city}(UP)`;
   console.log(weatherdata);
 
-  let temp = Math.floor(weatherdata.current.temp_c)
-  let humidity = weatherdata.current.humidity
-  let winds = weatherdata.current.wind_kph
-  let precipitation = weatherdata.current.precip_mm
-  let text = weatherdata.current.condition.text
+  let temp = Math.floor(weatherdata.current.temp_c);
+  let humidity = weatherdata.current.humidity;
+  let winds = weatherdata.current.wind_kph;
+  let precipitation = weatherdata.current.precip_mm;
+  let text = weatherdata.current.condition.text;
   console.log(weatherdata);
 
-  header2H2.innerHTML = `${temp}°C`
-  header2H4.innerHTML = `${text}`
-  header2H3.innerHTML = `Precipitation: ${precipitation}%`
-  header2H5.innerHTML = `Humidity: ${humidity}%`
-  header2H6.innerHTML = `Wind: ${winds} km/h`
+  header2H2.innerHTML = `${temp}°C`;
+  header2H4.innerHTML = `${text}`;
+  header2H3.innerHTML = `Precipitation: ${precipitation}%`;
+  header2H5.innerHTML = `Humidity: ${humidity}%`;
+  header2H6.innerHTML = `Wind: ${winds} km/h`;
 }
 weatherForCast();
-
-
-
