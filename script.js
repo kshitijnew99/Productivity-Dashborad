@@ -189,5 +189,31 @@ function Timer(){
 }
 Timer()
 
+async function weatherForCast(){
+    let APIkey = '8bd081d17292473a857203545250306';
+    let city = 'Lucknow';
+    let response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${APIkey}&q=${city}`)
+    
+    var weatherdata = await response.json()
+    let region = weatherdata.location.region
+    header1H4.innerHTML = `${city}(UP)`
+    console.log(weatherdata);
+    
+}
+weatherForCast();
+
+let header1H1 = document.querySelector('.header1 h1')
+let header1H4 = document.querySelector('.header1 h4')
+function dateTime(){
+    let date = null
+    date = new Date()
+    const daysofWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day = daysofWeek[date.getDay()]
+    let hours = date.getHours()
+    let minutes = date.getMinutes() 
+    header1H1.innerHTML = `${day}, ${hours}:${String(minutes).padStart('2','0')} `
+ 
+}
+dateTime()
 
 

@@ -232,6 +232,7 @@ html, body {
   grid-area: f;
 }
 #main1 .element .part6.elem .header {
+  color: white;
   height: 100%;
   width: 100%;
   display: flex;
@@ -246,6 +247,7 @@ html, body {
 #main1 .element .part6.elem .header1 h1 {
   font-size: 80px;
   font-weight: 500;
+  font-family: bold;
 }
 #main1 .element .part6.elem .header1 h4 {
   font-size: 60px;
@@ -263,6 +265,8 @@ html, body {
 #main1 .element .part6.elem .header2 h3 {
   font-size: 20px;
   font-weight: 700;
+  opacity: 0.8;
+  font-family: light;
 }
 
 #main2 {

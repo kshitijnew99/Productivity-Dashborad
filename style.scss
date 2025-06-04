@@ -265,6 +265,7 @@
         {
             grid-area: f; 
             .header{
+                color: white;
                 height: 100%;
                 width: 100%;
                 display:flex;
@@ -279,12 +280,14 @@
             .header1 h1{
                 font-size: 80px;
                 font-weight: 500;
+                font-family: bold;
             }
             .header1 h4{
                 font-size: 60px;
                 font-weight: 500;
             }
             .header2{
+                
                  h2{
                     font-size: 35px;
                     font-weight:800;
@@ -297,6 +300,8 @@
                 h3{
                     font-size: 20px;
                     font-weight: 700;
+                    opacity: 0.8;
+                    font-family: light;
                 }
             }
             
