@@ -211,7 +211,13 @@ function dateTime(){
     let day = daysofWeek[date.getDay()]
     let hours = date.getHours()
     let minutes = date.getMinutes() 
-    header1H1.innerHTML = `${day}, ${hours}:${String(minutes).padStart('2','0')} `
+
+    if(hours > 12 ){
+        header1H1.innerHTML = `${day}, ${hours - 12}:${String(minutes).padStart('2','0')} PM `
+    }else{
+        header1H1.innerHTML = `${day}, ${hours}:${String(minutes).padStart('2','0')} AM `
+    }
+    
  
 }
 dateTime()
