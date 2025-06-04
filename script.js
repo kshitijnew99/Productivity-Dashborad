@@ -204,22 +204,32 @@ weatherForCast();
 
 let header1H1 = document.querySelector('.header1 h1')
 let header1H4 = document.querySelector('.header1 h4')
+let header1H2 = document.querySelector('.header1 h2')
 function dateTime(){
     let date = null
     date = new Date()
     const daysofWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const monthsOfYear = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+
     let day = daysofWeek[date.getDay()]
     let hours = date.getHours()
     let minutes = date.getMinutes() 
+    let seconds = date.getSeconds()
+    let tarik = date.getDate()
+    let month = monthsOfYear[date.getMonth()]
+    let year = date.getFullYear()
 
     if(hours > 12 ){
-        header1H1.innerHTML = `${day}, ${hours - 12}:${String(minutes).padStart('2','0')} PM `
+        header1H1.innerHTML = `${day}, ${hours - 12}:${String(minutes).padStart('2','0')}:${String(seconds).padStart('2','0')} PM `
     }else{
         header1H1.innerHTML = `${day}, ${hours}:${String(minutes).padStart('2','0')} AM `
     }
-    
- 
+
+    header1H2.innerHTML = `${tarik} ${month} , ${year}`
 }
-dateTime()
+
+setInterval(() => {
+    dateTime()
+}, 1000);
 
 
