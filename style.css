@@ -415,7 +415,6 @@ html, body {
   padding: 20px;
   border-radius: 10px;
   border: 2px solid var(--tri1);
-  background-color: rgb(179, 17, 220);
 }
 #main2 .forElem .motivation-container {
   width: 90%;
@@ -445,7 +444,6 @@ html, body {
   padding: 10px;
   border-radius: 30px;
   width: 100%;
-  background-color: #98cef7;
   background: linear-gradient(90deg, #096B68 0%, rgba(17, 237, 226, 0.827) 100%);
 }
 #main2 .forElem .motivation-container .motivation-wrapper .motivation1 h2 {
@@ -491,7 +489,6 @@ html, body {
   height: 100%;
   scale: 1.6;
   border-radius: 30px;
-  background-color: #f83d49;
   position: absolute;
   z-index: 8;
   filter: blur(100px);
